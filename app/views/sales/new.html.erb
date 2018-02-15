@@ -1,0 +1,25 @@
+
+<%= notice %>
+<h1>Registro de Ventas</h1>
+
+<%= form_with model: @sale, local: true do |form| %>
+
+<br><%= form.label :detail %> <br>
+<%= form.text_area :detail, size: ('50x5') %>
+
+<br><%= form.label :category %><br>
+<%= form.text_field :category, id: :sale_category %>
+
+<br> <%= form.label :value %><br>
+<%= form.number_field :value, id: :sale_value %>
+
+<br> <%= form.label :discount %><br>
+<%= form.number_field :discount, min:1, max:40, id: :discount_content %>
+<br>
+
+Exento de Iva <%= form.check_box :iva %>
+<br><br>
+
+<%= form.submit "Crear" %>
+<% end %>
+
